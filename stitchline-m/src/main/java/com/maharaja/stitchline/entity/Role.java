@@ -10,21 +10,22 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @since 12/3/2021
  **/
 
-@Document(collection = "role")
+@Document(collection = "roles")
 public class Role {
 
     @Id
     private String id;
-    @Indexed(unique = true, direction = IndexDirection.DESCENDING, dropDups = true)
+    //@Indexed(unique = true, direction = IndexDirection.DESCENDING, dropDups = true)
 
-    private String role;
+    private ERole name;
+
 
     public Role() {
+
     }
 
-    public Role(String id, String role) {
-        this.id = id;
-        this.role = role;
+    public Role(ERole name) {
+        this.name = name;
     }
 
     public String getId() {
@@ -35,11 +36,11 @@ public class Role {
         this.id = id;
     }
 
-    public String getRole() {
-        return role;
+    public ERole getName() {
+        return name;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setName(ERole name) {
+        this.name = name;
     }
 }

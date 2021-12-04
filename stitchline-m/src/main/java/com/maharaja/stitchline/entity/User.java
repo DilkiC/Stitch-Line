@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -13,12 +14,12 @@ import java.util.Set;
  * @since 12/3/2021
  **/
 
-@Document(collection = "user")
+@Document(collection = "users")
 
 public class User {
     @Id
     private String id;
-    @Indexed(unique = true, direction = IndexDirection.DESCENDING, dropDups = true)
+    //@Indexed(unique = true, direction = IndexDirection.DESCENDING, dropDups = true)
 
     private String username;
     private String password;
@@ -31,12 +32,12 @@ public class User {
     //private boolean enabled;
 
     @DBRef
-    private Set<Role> roles;
+    private Set<Role> roles=new HashSet<>();
 
     public User() {
     }
 
-    public User(String id, String username, String password, String name, String mobile_number, String date_of_birth, String gender, String language, Set<Role> roles) {
+    public User(String id, String username, String password, String name, String mobile_number, String date_of_birth, String gender, String language) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -45,7 +46,7 @@ public class User {
         this.date_of_birth = date_of_birth;
         this.gender = gender;
         this.language = language;
-        this.roles = roles;
+
     }
 
     public String getId() {
