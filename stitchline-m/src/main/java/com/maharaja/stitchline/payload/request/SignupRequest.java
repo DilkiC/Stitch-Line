@@ -1,9 +1,5 @@
 package com.maharaja.stitchline.payload.request;
 
-import com.maharaja.stitchline.entity.Role;
-
-import javax.validation.constraints.Email;
-import java.util.HashSet;
 import java.util.Set;
 
 /**

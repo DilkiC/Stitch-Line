@@ -31,8 +31,8 @@ public class User {
 
     //private boolean enabled;
 
-    @DBRef
-    private Set<Role> roles=new HashSet<>();
+    /*@DBRef
+    private Set<Role> roles=new HashSet<>();*/
 
     public User() {
     }
@@ -120,11 +120,11 @@ public class User {
         this.language = language;
     }
 
-    public Set<Role> getRoles() {
+    /*public Set<Role> getRoles() {
         return roles;
     }
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }
+    }*/
 }

@@ -13,6 +13,7 @@ public interface UserRepo extends MongoRepository<User,String> {
 
     Optional<User>findByUsername(String username);
     Boolean existsByUsername(String username);
+
     Boolean existsByPassword(String password);
 
     //User findByUsername(String username);

@@ -33,8 +33,8 @@ public class UserDetailsImpl implements UserDetails {
 
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(String id, String username, String password,String name,String mobile_number,String date_of_birth,String gender,String language,
-                           Collection<? extends GrantedAuthority> authorities) {
+    public UserDetailsImpl(String id, String username, String password,String name,String mobile_number,String date_of_birth,String gender,String language
+                           ) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -43,13 +43,13 @@ public class UserDetailsImpl implements UserDetails {
         this.date_of_birth = date_of_birth;
         this.gender = gender;
         this.language = language;
-        this.authorities = authorities;
+        //this.authorities = authorities;
     }
 
     public static UserDetailsImpl build(User user) {
-        List<GrantedAuthority> authorities = user.getRoles().stream()
+        /*List<GrantedAuthority> authorities = user.getRoles().stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName().name()))
-                .collect(Collectors.toList());
+                .collect(Collectors.toList());*/
 
         return new UserDetailsImpl(
                 user.getId(),
@@ -59,8 +59,9 @@ public class UserDetailsImpl implements UserDetails {
                 user.getMobile_number(),
                 user.getDate_of_birth(),
                 user.getGender(),
-                user.getLanguage(),
-                authorities);
+                user.getLanguage()
+
+                );
     }
 
     @Override
