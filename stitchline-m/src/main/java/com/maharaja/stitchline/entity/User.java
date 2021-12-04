@@ -49,6 +49,13 @@ public class User {
 
     }
 
+    public User(String username, String name, String password) {
+        this.username = username;
+        this.name = name;
+        this.password = password;
+    }
+
+
     public String getId() {
         return id;
     }

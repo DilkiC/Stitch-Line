@@ -11,7 +11,7 @@ import com.maharaja.stitchline.repo.RoleRepo;
 import com.maharaja.stitchline.repo.UserRepo;
 import com.maharaja.stitchline.security.jwt.JwtUtils;
 import com.maharaja.stitchline.security.services.UserDetailsImpl;
-import com.maharaja.stitchline.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -88,7 +88,7 @@ public class AuthController {
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
-                userDetails.getEmail(),
+                userDetails.getName(),
                 roles));
     }
 
@@ -108,7 +108,7 @@ public class AuthController {
 
         // Create new user's account
         User user = new User(signUpRequest.getUsername(),
-                signUpRequest.getEmail(),
+                signUpRequest.getName(),
                 encoder.encode(signUpRequest.getPassword()));
 
         Set<String> strRoles = signUpRequest.getRoles();

@@ -3,7 +3,7 @@ package com.maharaja.stitchline.config;
 import com.maharaja.stitchline.security.jwt.AuthEntryPointJwt;
 import com.maharaja.stitchline.security.jwt.AuthTokenFilter;
 import com.maharaja.stitchline.security.services.UserDetailsServiceImpl;
-import com.maharaja.stitchline.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

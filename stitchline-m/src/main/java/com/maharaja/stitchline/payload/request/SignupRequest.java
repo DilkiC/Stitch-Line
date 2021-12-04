@@ -1,6 +1,9 @@
 package com.maharaja.stitchline.payload.request;
 
+import com.maharaja.stitchline.entity.Role;
+
 import javax.validation.constraints.Email;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -8,18 +11,17 @@ import java.util.Set;
  * @since 12/4/2021
  **/
 public class SignupRequest {
+
     //@NotBlank
     //@Size(min = 3, max = 20)
     private String username;
-
-
-    @Email
-    private String email;
-
-    private Set<String> roles;
-
-
     private String password;
+    private String name;
+    private String mobile_number;
+    private String date_of_birth;
+    private String gender;
+    private String language;
+    private Set<String> roles;
 
     public String getUsername() {
         return username;
@@ -27,14 +29,6 @@ public class SignupRequest {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPassword() {
@@ -45,12 +39,51 @@ public class SignupRequest {
         this.password = password;
     }
 
-    public Set<String> getRoles() {
-        return this.roles;
+    public String getName() {
+        return name;
     }
 
-    public void setRole(Set<String> roles) {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMobile_number() {
+        return mobile_number;
+    }
+
+    public void setMobile_number(String mobile_number) {
+        this.mobile_number = mobile_number;
+    }
+
+    public String getDate_of_birth() {
+        return date_of_birth;
+    }
+
+    public void setDate_of_birth(String date_of_birth) {
+        this.date_of_birth = date_of_birth;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public Set<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<String> roles) {
         this.roles = roles;
     }
-
 }
