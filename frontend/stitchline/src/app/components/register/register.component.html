@@ -1,1 +1,25 @@
-<p>register works!</p>
+<div class="wrapper">
+
+  <div class="block">
+
+    <form [formGroup]="register">
+      <h2>Register</h2>
+
+      <input type="text" placeholder="User Name" class="inp" formcontrolname="name">
+      <input type="text" placeholder="Password" class="inp" formcontrolname="password">
+      <input type="text" placeholder="Mobile_Number" class="inp" formcontrolname="mobile">
+
+      <div class="btns">
+
+        <button (click)="registerSubmit(register.value)" [disabled]="register.invalid">Signup</button>
+        <button (click)="goToLogin()">Login</button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+
+</div>
+
