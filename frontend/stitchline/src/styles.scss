@@ -1,8 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-  margin: 0;
-  padding: 0;
+.wrapper{
+  display: flex; justify-content: center; align-items: center;
+  height: 100vh;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+button{
+  padding: 15px 10px; background-color: crimson; margin-right: 5px;
+  color: white; font-weight: 600; border: none; width: 300px;
+  margin-bottom: 10px; border-radius: 20px; margin-top: 10px;
+}
+button:hover{
+  background-color: white; border: 1px solid crimson; color: crimson;
+}
+
+button:disabled{
+  background-color: gray; opacity: 0.8; color: white;
+}
+.block{
+  width: 350px;  display: flex;
+
+}
